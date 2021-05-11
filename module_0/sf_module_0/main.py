@@ -41,13 +41,14 @@ def game_core_v2(number):
 
 
 
-def game_core_v3(number):
-    #print(number)
-    count = 0
-    low = 1
-    high = 101
-    my_number = np.random.randint(low, high)
-    #print(f'Set a number between 1 and 100: {my_number}')
+def game_core_v3(number: int) -> int:
+    """функция принимает число, которое нужно угадать,
+    возвращает - количество попыток угадывания"""
+    count = 0 # счетчик
+    low = 1 # нижняя граница
+    high = 101 # верхняя граница
+    my_number = np.random.randint(low, high) # генерируем свое число для угадывания
+    #print(f'Your number between 1 and 100: {my_number}')
     while number != my_number:
         count += 1
         if my_number > number: 
@@ -59,7 +60,7 @@ def game_core_v3(number):
             #print('Your number is smaller!')
             low = my_number + 1
             my_number = np.random.randint( low, high) 
-            #print(f'Set a number between 1 and 100: {my_number}') 
+            #print(f'Your number between 1 and 100: {my_number}') 
     return(count)     
 
 print(score_game(game_core_v1)) 
